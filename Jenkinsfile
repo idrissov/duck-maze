@@ -13,7 +13,8 @@ node {
 		sh 'mvn clean install'
 	}
 	stage('check test') {
-		junit '**/target/*.xml'
+		sh 'mvn surefire-report:report'
+		junit '**/target/surefire-reports/*.xml'
 	}
 
 }
