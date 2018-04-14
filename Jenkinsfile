@@ -10,7 +10,7 @@ node {
 		)
 	}
 	stage( 'build' ) {
-		sh 'mvn clean install'
+		sh 'mvn clean install || true'
 	}
 	stage('check test') {
 		sh 'mvn surefire-report:report'
