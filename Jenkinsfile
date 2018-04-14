@@ -12,5 +12,8 @@ node {
 	stage( 'build' ) {
 		sh 'mvn clean install'
 	}
+	stage('check test') {
+		junit '**/target/*.xml'
+	}
 
 }
